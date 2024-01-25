@@ -847,6 +847,25 @@ These extension properties apply to "Schema Objects" in AsyncAPI spec.
   }
   ```
 
+* `x-json-tag-case`: Overrides the default json tag case type, which is the field name in the asyncapi document, and re-formats it to another case. Accepted cases are: `snake`, `kebab`, `camel`, `camel-lc-first`. For example,
+
+  ```yaml
+  schemas:
+    Object:
+      properties:
+        CamelCaseFlag:
+          type: integer
+          x-json-tag-case: snake
+  ```
+
+  will be generated as
+
+  ```go
+  type Object struct {
+            CamelCaseFlag mypackage.Flag `json:"camel_case_flag"`
+  }
+  ```
+
 ## Contributing and support
 
 If you find any bug or lacking a feature, please raise an issue on the Github repository!

@@ -26,6 +26,7 @@ require (
 	github.com/asyncapi/converter-go v0.3.0 // indirect
 	github.com/asyncapi/spec-json-schemas/v4 v4.3.1 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/gobeam/stringy v0.0.6 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/klauspost/compress v1.17.0 // indirect
 	github.com/kr/text v0.2.0 // indirect

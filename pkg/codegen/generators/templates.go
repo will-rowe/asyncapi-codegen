@@ -37,6 +37,7 @@ func templateFunctions() template.FuncMap {
 		"namifyWithoutParam":             templates.NamifyWithoutParams,
 		"namify":                         templates.Namify,
 		"snakeCase":                      templates.SnakeCase,
+		"convertCase":                    templates.ConvertCase,
 		"referenceToStructAttributePath": templates.ReferenceToStructAttributePath,
 		"referenceToTypeName":            templates.ReferenceToTypeName,
 		"channelToMessageTypeName":       templates.ChannelToMessageTypeName,

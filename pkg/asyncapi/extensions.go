@@ -13,6 +13,9 @@ type Extensions struct {
 
 	// Setting custom import statements for ExtGoType
 	ExtGoTypeImport *GoTypeImportExtension `json:"x-go-type-import"`
+
+	// Setting custom case format for json tags
+	ExtJSONTagCase string `json:"x-json-tag-case"`
 }
 
 // GoTypeImportExtension specifies the required import statement

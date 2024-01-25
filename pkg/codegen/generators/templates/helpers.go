@@ -7,6 +7,7 @@ import (
 	"strings"
 	"unicode"
 
+	"github.com/gobeam/stringy"
 	"github.com/lerenn/asyncapi-codegen/pkg/asyncapi"
 )
 
@@ -60,6 +61,28 @@ func SnakeCase(sentence string) string {
 	snake := matchFirstCap.ReplaceAllString(sentence, "${1}_${2}")
 	snake = matchAllCap.ReplaceAllString(snake, "${1}_${2}")
 	return strings.ToLower(snake)
+}
+
+// ConvertCase will convert a sentence to a given case.
+// If an unknown or empty caseFormat is provided, it will
+// return the provided sentence unaltered.
+func ConvertCase(sentence, caseFormat string) string {
+	str := stringy.New(sentence)
+	switch caseFormat {
+	case "snake":
+		val := str.SnakeCase()
+		return val.ToLower()
+	case "kebab":
+		val := str.KebabCase()
+		return val.ToLower()
+	case "camel":
+		return str.CamelCase()
+	case "camel-lc-first":
+		camel := str.CamelCase()
+		return stringy.New(camel).LcFirst()
+	default:
+		return sentence
+	}
 }
 
 // ReferenceToTypeName will convert a reference to a type name in the form of
